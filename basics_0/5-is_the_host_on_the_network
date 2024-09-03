@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# Check if an argument (IP address) is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
+#Checks if the host is on the network
+
+# Check if the argument is passed
+if [ "$#" -ne 1 ]; then
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
     exit 1
 fi
 
-# Store the IP address passed as an argument
+# Get the IP address from the argument
 IP_ADDRESS=$1
 
 # Ping the IP address 5 times
-ping -c 5 $IP_ADDRESS
+ping -c 5 "$IP_ADDRESS"
